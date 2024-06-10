@@ -97,6 +97,7 @@ const Login = () => {
               <button
                 role="status"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#527450] hover:bg-[#527450] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#527450]"
+                disabled={isLoading}
               >
                 <svg
                   aria-hidden="true"
@@ -120,6 +121,7 @@ const Login = () => {
               <button
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#527450] hover:bg-[#527450] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#527450]"
+                disabled={isLoading}
               >
                 Login
               </button>
