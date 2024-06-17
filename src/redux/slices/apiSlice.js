@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 export const apiSlice = createApi({
   reducerPath: "ojApi",
   baseQuery: fetchBaseQuery({
+    // baseUrl: "http://localhost:8080/api",
     baseUrl: "https://online-judge-backend-t31i.onrender.com/api",
     prepareHeaders: (headers, { getState, endpoint }) => {
       if (endpoint !== "/login" && endpoint !== "/register") {

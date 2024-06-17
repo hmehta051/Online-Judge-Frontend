@@ -36,8 +36,20 @@ const Navbar = () => {
         <Link to="/about-us" className="text-[#527450]">
           <FaInfoCircle size={24} />
         </Link>
-        <>{!Cookies.get("token") && <Link to="/login" className="text-[#527450]">Login</Link>}</>
-        <>{Cookies.get("token") && <div onClick={handleLogout} className="text-[#527450]">Logout</div>}</>
+        <>
+          {!Cookies.get("token") && (
+            <Link to="/login" className="text-[#527450]">
+              Login
+            </Link>
+          )}
+        </>
+        <>
+          {Cookies.get("token") && (
+            <div onClick={handleLogout} className="text-[#527450]">
+              Logout
+            </div>
+          )}
+        </>
       </div>
     </div>
   );

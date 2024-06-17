@@ -59,14 +59,16 @@ const SingleQuestion = () => {
 
     try {
       const res = await submitQuestion(postData).unwrap();
-      if (res.status === "success") {
+      if (res.status === "success" && res.solution.status === "Accepted") {
         toast.success(res.solution.status);
+      } else {
+        toast.error(res.solution.status);
       }
     } catch (error) {
-      if (error.data.details.error) {
+      if (error.data.details.error == "Execution error") {
         toast.error(error.data.details.error || error.message);
       } else {
-        toast.error(error.data.details.stderr);
+        toast.error("Syntax error/Server Error" || error.data.details.stderr);
       }
       console.error("API request error:", error); // Log the error for debugging
     }
@@ -109,8 +111,12 @@ const SingleQuestion = () => {
         toast.error(res.message || "Check Network Connection");
       }
     } catch (error) {
-      if (error.data.details.error) {
-        toast.error(error.data.details.error || error.message);
+      if (error.status === 500) {
+        toast.error(
+          "Syntax Error or Server Error" ||
+            error.data.details.error ||
+            error.message,
+        );
       } else {
         toast.error(error.data.details.stderr);
       }

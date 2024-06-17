@@ -84,22 +84,26 @@ const SubmissionScreen = () => {
       </Link>
       <div className="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-4">
-          Your Last Submitted Solution
+          Your Last Accepted Submitted Solution
         </h1>
-        <div className="bg-gray-100 p-4 rounded-lg shadow-inner">
-          {languageMode ? (
-            <CodeMirror
-              value={lastSubmission.code}
-              extensions={[languageMode]}
-              options={{
-                theme: "material",
-                readOnly: "nocursor",
-              }}
-            />
-          ) : (
-            <pre className="whitespace-pre-wrap">{lastSubmission.code}</pre>
-          )}
-        </div>
+        {lastSubmission.status === "Wrong Answer" ? (
+          <div className="text-center text-xl mt-8">No submissions found.</div>
+        ) : (
+          <div className="bg-gray-100 p-4 rounded-lg shadow-inner">
+            {languageMode ? (
+              <CodeMirror
+                value={lastSubmission.code}
+                extensions={[languageMode]}
+                options={{
+                  theme: "material",
+                  readOnly: "nocursor",
+                }}
+              />
+            ) : (
+              <pre className="whitespace-pre-wrap">{lastSubmission.code}</pre>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
