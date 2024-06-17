@@ -45,7 +45,7 @@ const Navbar = () => {
         </>
         <>
           {Cookies.get("token") && (
-            <div onClick={handleLogout} className="text-[#527450]">
+            <div onClick={handleLogout} className="text-[#527450] cursor-pointer">
               Logout
             </div>
           )}
