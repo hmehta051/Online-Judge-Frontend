@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const EditQuestion = () => {
   const { quesId } = useParams();
   const navigate = useNavigate();
-  const { data: question, isLoading: isQuestionLoading } = useGetQuestionQuery(
+  const { data: question, isLoading: isQuestionLoading, refetch } = useGetQuestionQuery(
     quesId,
     { skip: !quesId },
   );
@@ -24,6 +24,7 @@ const EditQuestion = () => {
   const [testCases, setTestCases] = useState([{ input: "", output: "" }]);
 
   useEffect(() => {
+    refetch();
     if (question) {
       setNewTitle(question.question.title);
       setNewDescription(question.question.description);

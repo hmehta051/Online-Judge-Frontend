@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useDeleteQuestionMutation,
   useGetAllQuestionQuery,
@@ -32,6 +32,10 @@ const QuestionList = () => {
       console.error("Failed to delete the question: ", error);
     }
   };
+
+  useEffect(()=>{
+    refetch();
+  },[])
 
   if (isLoading) return <div>Loading questions...</div>;
   if (isQuestionLoading) return <div>Loading question details...</div>;
