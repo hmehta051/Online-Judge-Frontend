@@ -63,7 +63,7 @@ const QuestionsRender = () => {
               </div>
               <div className="flex items-center text-sm">
                 <span className="mr-2 font-medium">Difficulty:</span>
-                <span className="badge bg-blue-500 text-white px-2 py-1 rounded">
+                <span className="badge bg-[#527450] text-white px-2 py-1 rounded">
                   {question.difficulty}
                 </span>
                 <span className="ml-2 font-medium">Topic:</span>
