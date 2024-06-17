@@ -336,7 +336,7 @@ const SingleQuestion = () => {
                 ) : (
                   <button
                     onClick={handleTestCaseRun}
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300"
+                    className="bg-[#527450] text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300"
                   >
                     Run
                   </button>
@@ -365,7 +365,7 @@ const SingleQuestion = () => {
                 ) : (
                   <button
                     onClick={handleSubmit}
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300"
+                    className="bg-[#527450] text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300"
                   >
                     Submit
                   </button>
